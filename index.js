@@ -34,6 +34,11 @@ app.get('/sudoku', async (req, res)=>{
     
 })
 
+app.get((req,res)=>{
+    //TODO- outsource base url to .env
+    return res.status(404).send('<html>Not Found. Did you mean <a href="http://localhost:8080/sudoku">Sudoku</a></html>')
+})
+
 app.listen(PORT, (error)=>{
     if (error) {
         console.warn(error);
